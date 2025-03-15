@@ -48,6 +48,14 @@
 }
 
 
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
 
 
 
@@ -70,7 +78,7 @@ main{
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 100vh;
+  height: 110vh;
   width: 100%;
 }
 .pink{
@@ -81,7 +89,7 @@ main{
   justify-content: space-between;
   align-items: center;
   width: 75%;
-  max-width: 1000px;
+  max-width: 1200px;
   
 }
 
@@ -89,7 +97,7 @@ main{
   width: 50%;
 }
 .hero-text{
-  font-size: 50px;
+  font-size: 3.5vw;
 }
 .hero h2{
   font-size: 30px;
@@ -108,6 +116,7 @@ main{
   justify-content: space-around;
   float: left;
   max-width: 350px;
+  font-size: max(20px, 1vw); 
 }
 .links div{
   display: flex;
@@ -170,7 +179,7 @@ main{
     z-index: -1;
     background-color: rgb(255, 193, 214);
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     border-radius: 65% 35% 45% 55%/ 60% 40% 60% 40%;
 }
 
@@ -178,16 +187,13 @@ main{
 
 #technology{
   display: flex;
-  background-color: rgb(255, 193, 214);
+  /* background-color: rgb(255, 193, 214); */
   width: 110%;
-  height: 120vh;
-  border-radius: 100% 100px 0px 0px/ 50% 100px 0px 0px;
-  
+  height: 100px;
   
 }
-#technology i{
+.container i{
   font-size: 4em;
-  
 }
 .container{
   position: absolute;
@@ -197,24 +203,28 @@ main{
   mix-blend-mode: difference;
   animation: marque 10s linear infinite;
   
-  
 }
 .container:hover{
   animation-play-state: paused;
 }
-
 @keyframes marque{
   to {
     transform: translateX(-50%);
   }
 }
-/* 
-hard-light
-color-burn
-exclusion
-luminosity
-  */
 
-@media (max-width: 1200px) {
-  
+
+.mag{
+  position: absolute;
+  font-size: 8em;
+  transform: translate(1850px, -20px);
+}
+.content{
+  position: absolute;
+  background-color: rgb(255, 193, 214);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  transform: translate(1864px, -5px);
+  z-index: -1;
 }
