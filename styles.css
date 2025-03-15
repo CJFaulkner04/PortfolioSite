@@ -1,96 +1,165 @@
-
-
-.manrope-light {
-    font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
+/* fonts */
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
 
-.manrope {
-    font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
 }
 
-.manrope-med {
-    font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
-.manrope-bold {
-    font-family: "Manrope-bold", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-  }
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
 
 
 
 
 *{
-    font-family: "Manrope", sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: rgb(37, 37, 37);
+  margin: 0;
+  padding: 0;
+
 }
 body{
-    display: flex;
-    flex-direction: column;
-    align-items: center
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
 }
 main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100%;
+}
+.pink{
+  color: rgb(255, 193, 214);
 }
 .hero-section{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 70%;
-    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+  max-width: 1000px;
+  
 }
 
 .hero{
-    width: 75%;
+  width: 50%;
 }
 .hero-text{
-    font-size: 50px;
+  font-size: 50px;
 }
 .hero h2{
-    font-size: 30px;
+  font-size: 30px;
 }
 .hero p{
-    font-size: 20px;
-    margin-top: 20px;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
 .links{
-    margin-top: 20px;
-    margin: 20px auto;
-    display: flex;
-    width: 70%;
-    min-width: 300px;
-    align-self: center;
-    justify-content: space-around;
+  margin-top: 20px;
+  margin: 20px auto;
+  display: flex;
+  width: 100%;
+  align-self: center;
+  justify-content: space-around;
+  float: left;
+  max-width: 350px;
 }
-i{
-    height: 20px;
-    width: 20px;
+.links div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.links a{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  padding: 7px;
+  border-radius: 65% 35% 45% 55%/ 60% 40% 60% 40%;
+  animation: morph 10s linear infinite alternate, spin 10s linear infinite running;
+  transition: all .3s ease-in-out;
+}
+.links a:hover{
+  background-color: rgba(255, 193, 214, 0.452);
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+}
+
+
+@keyframes morph{
+  0%{
+      border-radius: 65% 35% 45% 55%/ 60% 40% 60% 40%;
+  }
+  100%{
+      border-radius: 40% 60% 40% 60%/ 55% 45% 45% 55%;
+  }
+}
+
+@keyframes spin{
+  0%{
+      transform: rotate(0);
+  }
+  100%{
+      transform: rotate(360deg);
+  }
+}
+
+
 
 .img-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
     max-width: 500px;
+    min-width: 300px;
 }
 .img-container img{
     transform: translateY(10px);
@@ -100,54 +169,52 @@ i{
     overflow: hidden;
     z-index: -1;
     background-color: rgb(255, 193, 214);
-    width: 80%;
+    width: 100%;
+    max-width: 400px;
     border-radius: 65% 35% 45% 55%/ 60% 40% 60% 40%;
 }
 
 
 
-/* .art1{
-    position: absolute;
-    background-color: rgba(160, 228, 255, 0.25);;
-    height: 300px;
-    width: 50px;
-    z-index: -1;
-    transform: rotate(45deg) translate(-160px);
-    border-radius: 150px;
+#technology{
+  display: flex;
+  background-color: rgb(255, 193, 214);
+  width: 110%;
+  height: 120vh;
+  border-radius: 100% 100px 0px 0px/ 50% 100px 0px 0px;
+  
+  
 }
-.art2{
-    position: absolute;
-    background-color: rgba(160, 228, 255, 0.25);
-    height: 400px;
-    width: 50px;
-    z-index: -1;
-    transform: rotate(45deg) translate(-80px);
-    border-radius: 150px;
+#technology i{
+  font-size: 4em;
+  
 }
-.art3{
-    position: absolute;
-    background-color: rgba(160, 228, 255, 0.50);;
-    height: 500px;
-    width: 50px;
-    z-index: -1;
-    transform: rotate(45deg) translate(0px);
-    border-radius: 150px;
+.container{
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 200%;
+  mix-blend-mode: difference;
+  animation: marque 10s linear infinite;
+  
+  
 }
-.art4{
-    position: absolute;
-    background-color: rgba(160, 228, 255, 0.75);;
-    height: 400px;
-    width: 50px;
-    z-index: -1;
-    transform: rotate(45deg) translate(80px);
-    border-radius: 150px;
+.container:hover{
+  animation-play-state: paused;
 }
-.art5{
-    position: absolute;
-    background-color: rgba(160, 228, 255, 1);;
-    height: 300px;
-    width: 50px;
-    z-index: -1;
-    transform: rotate(45deg) translate(160px);
-    border-radius: 150px;
-} */
+
+@keyframes marque{
+  to {
+    transform: translateX(-50%);
+  }
+}
+/* 
+hard-light
+color-burn
+exclusion
+luminosity
+  */
+
+@media (max-width: 1200px) {
+  
+}
