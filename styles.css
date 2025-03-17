@@ -72,13 +72,44 @@ body{
   align-items: center;
   overflow-x: hidden;
 }
+
+nav{
+  position: fixed;
+  top: -53px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  height: 50px;
+  transition: all .5s;
+  background-color: white;
+}
+nav ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 40%;
+}
+nav ul li{
+  list-style: none;
+  transition: all .1s;
+  border-bottom: 0px solid rgb(255, 193, 214);
+}
+nav ul li a{
+  text-decoration: none;
+}
+ nav ul li:hover{
+  border-bottom: 3px solid rgb(255, 193, 214);
+ }
+
 main{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 110vh;
+  height: 100vh;
   width: 100%;
 }
 .pink{
@@ -97,7 +128,7 @@ main{
   width: 50%;
 }
 .hero-text{
-  font-size: 3.5vw;
+  font-size: max(3.5vw, 40px);
 }
 .hero h2{
   font-size: 30px;
@@ -114,9 +145,8 @@ main{
   width: 100%;
   align-self: center;
   justify-content: space-around;
-  float: left;
   max-width: 350px;
-  font-size: max(20px, 1vw); 
+  font-size: max(1.6vw, 25px); 
 }
 .links div{
   display: flex;
@@ -135,7 +165,7 @@ main{
   animation: morph 10s linear infinite alternate, spin 10s linear infinite running;
   transition: all .3s ease-in-out;
 }
-.links a:hover{
+.links div:hover a{
   background-color: rgba(255, 193, 214, 0.452);
   width: 30px;
   height: 30px;
@@ -167,8 +197,9 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 50%;
     max-width: 500px;
-    min-width: 300px;
+    min-width: 200px;
 }
 .img-container img{
     transform: translateY(10px);
@@ -194,6 +225,7 @@ main{
 }
 .container i{
   font-size: 4em;
+  transition: .3s;
 }
 .container{
   position: absolute;
@@ -202,9 +234,32 @@ main{
   width: 200%;
   mix-blend-mode: difference;
   animation: marque 10s linear infinite;
+  transition: all .3s;
   
 }
 .container:hover{
+  animation-play-state: paused ;
+}
+ .container span{
+  visibility: hidden;
+  position: absolute;
+  background-color: white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 5px;
+  border-radius: 5px;
+  transform: translate(-20px);
+  box-shadow: 0px 0px 8px .2px rgba(0,0,0,.2);
+ }
+
+.container i:hover{
+  font-size: 5em;
+  transform: translate(0, -15px);
+}
+.container i:hover span{
+  visibility: visible;
+}
+.container i:hover .container{
   animation-play-state: paused;
 }
 @keyframes marque{
@@ -213,18 +268,35 @@ main{
   }
 }
 
-
-.mag{
-  position: absolute;
-  font-size: 8em;
-  transform: translate(1850px, -20px);
+#experience{
+  background-color: rgb(37, 37, 37);
+  width: 100%;
+  height: 100vh;
 }
-.content{
-  position: absolute;
-  background-color: rgb(255, 193, 214);
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  transform: translate(1864px, -5px);
-  z-index: -1;
+
+
+
+@media (max-width: 860px) {
+  nav{
+    justify-content: center;
+  }
+  nav ul{
+    width: 100%;
+  }
+  .hero-section{
+    flex-direction: column-reverse;
+    text-align: center;
+    width: 100%;
+  }
+  .hero{
+    width: 80%;
+  }
+  .links{
+    width: 100%;
+    float: none;
+  }
+  .img-container{
+    width: 40%;
+    min-width: 275px;
+  }
 }
