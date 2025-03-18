@@ -51,6 +51,9 @@
 html {
   overflow: scroll;
   overflow-x: hidden;
+  scroll-behavior
+  
+  :smooth;
 }
 ::-webkit-scrollbar {
   width: 0;  /* Remove scrollbar space */
@@ -83,6 +86,7 @@ nav{
   height: 50px;
   transition: all .5s;
   background-color: white;
+  border-bottom: 1px solid rgb(214, 214, 214);
 }
 nav ul{
   display: flex;
@@ -125,7 +129,8 @@ main{
 }
 
 .hero{
-  width: 50%;
+  width: 40%;
+  min-width: 310px;
 }
 .hero-text{
   font-size: max(3.5vw, 40px);
@@ -167,11 +172,23 @@ main{
 }
 .links div:hover a{
   background-color: rgba(255, 193, 214, 0.452);
-  width: 30px;
-  height: 30px;
+  width: 10px;
+  height: 10px;
   padding: 7px;
+  animation: pulse 1.3s linear infinite alternate, morph 10s linear infinite alternate, spin 10s linear infinite running;
+  transition: all ease-in-out .3s;
 }
 
+@keyframes pulse{
+    0%{
+        width: 35px;
+        height: 35px;
+    }
+    100%{
+        width: 45px;
+        height: 45px;
+    }
+}
 
 @keyframes morph{
   0%{
@@ -218,9 +235,10 @@ main{
 
 #technology{
   display: flex;
-  /* background-color: rgb(255, 193, 214); */
   width: 110%;
   height: 100px;
+  margin-bottom: 30px;
+  align-items: center;
   
 }
 .container i{
@@ -269,9 +287,72 @@ main{
 }
 
 #experience{
-  background-color: rgb(37, 37, 37);
-  width: 100%;
-  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 95vh;
+    margin-top: 25px;
+}
+#experience h1{
+    font-size: 40px;
+    width: 60%;
+    font-weight: 400;
+    
+}
+.exp-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 60%;
+    height: 80%;
+    transition: .4s;
+}
+.card{
+    padding: 5px 0px 10px 0;
+    height: 15%;
+    border-bottom: 2px solid rgb(255, 193, 214);
+    overflow-y: hidden;
+    transition: all .4s;
+}
+.cardhead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cardhead h2{
+    font-weight: 400;
+}
+.cardhead img{
+    width: 75px;
+    border-radius: 50%;
+}
+.cardbody{
+    padding-top: 40px;
+}
+.cardbody h2{
+    font-weight: 300;
+    font-size: 20px;
+    text-align: right;
+}
+.cardbody p{
+    padding-top: 10px;
+}
+.card:hover {
+    height: 250px;
+    border-bottom: 4px solid rgb(255, 193, 214);
+}
+
+
+
+
+
+/* Contact */
+#contact{
+    background-color: rgb(255, 193, 214);
+    height: 100vh;
+    width: 100%;
 }
 
 
@@ -298,5 +379,11 @@ main{
   .img-container{
     width: 40%;
     min-width: 275px;
+  }
+  #experience h1{
+    width: auto;
+  }
+  .exp-container{
+    width: 90%;
   }
 }
