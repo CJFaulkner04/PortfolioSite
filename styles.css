@@ -362,45 +362,66 @@ main{
   font-size: 40px;
   font-weight: 400;
 }
+.bigger{
+  width: 100vw;
+  height: 100%;
+  overflow-x: scroll;
+}
+.big{
+  display: flex;
+  align-self: flex-start;
+  height: 90%;
+  width: 300vw;
+  overflow-x: scroll;
+  
+}
+.p-c{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+}
 .proContainer{
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 80%;
-  width: 75%;
+  width: 80%;
   /* z-index: -1; */
 }
 .proDesc{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 50%;
-  width: 40%;
+  justify-content: space-between;
+  height: 70%;
+  width: 50%;
 }
 .proDesc h2{
-  font-size: 35px;
+  font-size: clamp(25px, 2.5vw, 40px);
   font-weight: 300;
 }
 .proDesc p{
-  font-size: 20px;
+  font-size: clamp(15px, 2vw, 25px);
   font-weight: 200;
 }
 .proDesc i{
   font-size: 50px;
 }
 .proContainer iframe{
-  width: 110%;
-  height: 750px;
+  width: 120%;
+  height: 120%;
   border-style: none;
   border-radius: 40px;
-  transform: scale(.70);
+  transform: scale(.7);
 }
-.laptop{
-  width: 100%;
+.proTools{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50px;
 }
-.laptop img{
-  width: 100%;
-}
+
 
 /* Contact */
 #contact{
@@ -445,10 +466,16 @@ main{
   }
   .proContainer{
     flex-direction: column;
+    justify-content: center;
     width: 90%;
   }
   .proDesc{
     width: 60%;
-    height: 400px;
+  }
+  .proTools{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
   }
 }
